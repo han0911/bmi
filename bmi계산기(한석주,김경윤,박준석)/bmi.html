@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="bmi.css" />
+  </head>
+  <body>
+    <form id="bmiForm">
+      <div class="private">
+        <label for="birthdate">생년월일:</label>
+        <input type="date" id="birthdate" name="birthdate" required class="ymd"/>
+        <label >성별:</label>
+        <label
+          ><input type="radio" name="gender" value="남자" required />
+          남자</label
+        >
+        <label
+          ><input type="radio"  name="gender" value="여자" required />
+          여자</label
+        >
+      </div>
+
+      <legend class="head"><h2>bmi 계산기</h2></legend>
+      <div class="solo">
+        <label><input type="checkbox" checked required />개인정보 동의</label>
+      </div>
+      <label for="weight">몸무게 (kg):</label>
+      <label for="height">키 (cm):</label>
+      <input type="number" id="height" name="height" required />
+
+      <label for="weight">몸무게 (kg):</label>
+      <input type="number" id="weight" name="weight" required />
+
+      <button type="submit">계산하기</button>
+
+      <div id="result"></div>
+    </form>
+    <script src="bmi.js"></script>
+  </body>
+</html>
