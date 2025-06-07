@@ -1,9 +1,8 @@
-
 let name_;
-let appStarted = false; // 실행 여부 체크 변수
+let appStarted = false;
 
 function startApp() {
-  if (appStarted) return; // 이미 실행했으면 종료
+  if (appStarted) return;
   appStarted = true;
 
   const nameInput = document.getElementById("username");
@@ -11,34 +10,37 @@ function startApp() {
 
   if (!name_) {
     alert("이름을 입력해주세요.");
-    appStarted = false; // 실패했으면 다시 실행 허용
+    appStarted = false;
     return;
   }
 
   alert(`어서오세요 ${name_}씨`);
   document.getElementById("nameModal").style.display = "none";
   document.getElementById("bmiForm").style.display = "block";
-  document.getElementById("img").style.display = "block"
+  document.getElementById("img").style.display = "block";
+
+  document.querySelector(".END").innerHTML = `<h2>${name_}님의 BMI 수치는 파이썬에서 받아올 예정입니다.</h2>`;
 }
+
 function showResult(event) {
-  event.preventDefault(); // 폼 자동 제출 방지
+  event.preventDefault();
   const height = document.getElementById("height").value.trim();
   const weight = document.getElementById("weight").value.trim();
 
   if (!height || !weight) {
     alert("키와 몸무게를 모두 입력해주세요.");
-    return; // 아무 값 없으면 종료
+    return;
   }
 
-  // 모든 값이 있을 때만 폼 숨기기
   document.getElementById("bmiForm").style.display = "none";
   document.getElementById("img").style.display = "none";
-  
+  document.querySelector(".main").style.display = "flex";
 }
-// Enter 키 눌렀을 때 실행
+
+// 엔터키로도 시작 가능
 document.getElementById("username").addEventListener("keydown", function (e) {
   if (e.key === "Enter") {
-    e.preventDefault(); // 폼 제출 막기
+    e.preventDefault();
     startApp();
   }
 });
