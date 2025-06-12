@@ -1,27 +1,26 @@
-body{
-    flex-direction: column;
-    display: flex;
-    align-items: center;
-    margin: 0px;
-    width: 100vw;
-    height: 100vh;
-    gap: 30px;
+body {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  margin: 0px;
+  width: 100vw;
+  height: 100vh;
+  gap: 30px;
 }
-#bmiForm{
-    width: 600px;
-    height: 120px;
-    border: 1.5px solid black;
-    border-radius: 15px;
-    box-shadow: 5px 5px 5px 0.5 black;
+#bmiForm {
+  width: 600px;
+  height: 120px;
+  border: 1.5px solid black;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px 0.5 black;
 }
-.head{
-    margin-top: 7px;
-    width: 600px;
-    text-align: center;
-    height: 37px;
-    margin-bottom: 10px;
+.head {
+  margin-top: 7px;
+  width: 600px;
+  text-align: center;
+  height: 37px;
+  margin-bottom: 10px;
 }
-
 
 .modal {
   position: fixed;
@@ -41,53 +40,62 @@ body{
   border-radius: 12px;
   text-align: center;
 }
-.all{
-    display: flex;
-    justify-content: space-around;
+.all {
+  display: flex;
+  justify-content: space-around;
 }
-h2{
-    margin-top: 4px;
-    margin-bottom: 10px;
+h2 {
+  margin-top: 4px;
+  margin-bottom: 10px;
 }
-#bu{
-    background-color: black;
-    color: white;
-    border: 2px solid black;
-    border-radius: 5px;
+#bu {
+  background-color: black;
+  color: white;
+  border: 2px solid black;
+  border-radius: 5px;
 }
-.button{
-    margin-top: 14px;
-    display: flex;
-    border-radius: 15px;
-    margin-left: 525px;
+.button {
+  margin-top: 14px;
+  display: flex;
+  border-radius: 15px;
+  margin-left: 525px;
 }
-button{
-    background-color: black;
-    color: white;
-    border: 2px solid black;
-    border-radius: 5px;
+button {
+  background-color: black;
+  color: white;
+  border: 2px solid black;
+  border-radius: 5px;
 }
-.last{
-    width: 100vw;
-    height: 100vh;
-    background-color: black;
+.last {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
 }
-#img{
-    margin-top: 40px;
-    width: 550px;
-    height: 300px;
-    object-fit: fill;
+#img {
+  margin-top: 40px;
+  width: 550px;
+  height: 300px;
+  object-fit: fill;
 }
 
-.main{
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    display: none;
-    justify-content: center;
-    align-items: center;
+.main {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 3s ease-in-out;
 }
 .END {
   font-size: 24px; /* h2 기본 크기 */
   font-weight: bold;
+}
+.BACK{
+  color: white;
+  border: 2px solid black;
+  background-color: black;
+  border-radius: 5px;
+  
 }

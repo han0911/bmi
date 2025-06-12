@@ -4,11 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="bmi.css" />
+    <link rel="stylesheet" href="/bmi계산기(한석주,김경윤,박준석)/bmi.css" />
   </head>
   <body>
     <div class="main">
-      <div class="END"><h2>아직안함</h2></div>
+      <div class="END">
+        <h2>아직안함</h2>
+        <br />
+      </div>
+      <div class="BMI"><h2>.</h2></div>
+      <input type="button" class="BACK" value="되돌아가기">
     </div>
     <div id="nameModal" class="modal">
       <div class="modal-content">
@@ -26,18 +31,18 @@
       <h1 class="head">bmi 계산기</h1>
       <div class="all">
         <div class="H">
-          <label for="height">키 (cm):</label>
-          <input type="number" id="height" name="height" required />
+          <label>키 (cm):</label>
+          <input type="number" step="any" id="height" name="height" required />
         </div>
         <div class="W">
-          <label for="weight">몸무게 (kg):</label>
-          <input type="number" id="weight" name="weight" required />
+          <label>몸무게 (kg):</label>
+          <input type="number" step="any" id="weight" name="weight" required />
         </div>
       </div>
       <div class="button">
         <button type="submit" onclick="showResult()">계산하기</button>
       </div>
     </form>
-    <script src="bmi.js"></script>
+    <script src="/bmi계산기(한석주,김경윤,박준석)/bmi.js"></script>
   </body>
 </html>

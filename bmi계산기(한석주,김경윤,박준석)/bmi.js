@@ -31,6 +31,43 @@ function showResult(event) {
     alert("키와 몸무게를 모두 입력해주세요.");
     return;
   }
+  const formData = new FormData();
+  formData.append("height", height);
+  formData.append("weight", weight);
+
+  fetch("/bmi", {
+    method: "POST",
+    body: formData
+  })
+    .then((response) => {
+      if (!response.ok) throw new Error("서버 오류 발생");
+      return response.json();
+    })
+    .then((data) => {
+      const bmi = data.bmi;
+      document.getElementById("bmiForm").style.display = "none";
+      document.getElementById("img").style.display = "none";
+      document.querySelector(".main").style.display = "flex";
+      document.querySelector(".END").innerHTML = `<h2>${name_}님의 BMI는 ${bmi}입니다.</h2><br>`;
+
+      if (bmi<=18.5) {
+        document.querySelector(".BMI h2").innerText = "저체중입니다.";
+      } else if (bmi<=23) {
+        document.querySelector(".BMI h2").innerText = "정상입니다.";
+      } else if (bmi<=25) {
+        document.querySelector(".BMI h2").innerText = "과체중입니다.";
+      } else if (bmi<= 30) {
+        document.querySelector(".BMI h2").innerText = "비만입니다.";
+      } else {
+        document.querySelector(".BMI h2").innerText = "병원에 한번가보세요.";
+      }
+    })
+
+    .catch((error) => {
+      console.error(error);
+      alert("BMI 계산 실패: 서버에 문제가 있습니다.");
+    });
+
 
   document.getElementById("bmiForm").style.display = "none";
   document.getElementById("img").style.display = "none";
@@ -44,3 +81,13 @@ document.getElementById("username").addEventListener("keydown", function (e) {
     startApp();
   }
 });
+const Button = document.querySelector(".BACK");
+function EoE(){
+  document.querySelector(".main").style.display = "none";
+  document.getElementById("img").style.display = "block";
+  document.getElementById("bmiForm").style.display = "block";
+  document.getElementById("height").value = "";
+  document.getElementById("weight").value = "";
+
+}
+Button.addEventListener("click",EoE)
